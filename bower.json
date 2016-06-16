@@ -1,0 +1,26 @@
+{
+  "name": "Public-Transportation-App",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "clivecadogan <ricardo.0x07@gmail.com>"
+  ],
+  "description": "Meet-Up-Event-Planner",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "gold-elements": "PolymerElements/gold-elements#^1.0.1",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.10",
+    "paper-progress": "PolymerElements/paper-progress#^1.0.9",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "google-apis": "GoogleWebComponents/google-apis#~1.1.2"
+  }
+}
