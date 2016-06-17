@@ -6,12 +6,24 @@ var allCaches = [
   staticCacheName
 ];
 importScripts("/idb/lib/idb.js");
-
+// 
 var urlsToPrefetch = [
+  '/',
+  '/sw.js',
   '/css/style.css',
   '/bundle.js',
   '/img/slice3.jpg',
-  '/idb/lib/idb.js'
+  '/idb/lib/idb.js',
+  '/polymer-elements/elements.html',
+  '/shell.html',
+  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
+  'https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css',
+  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff2',
+  '/browser-sync/browser-sync-client.2.12.5.js',
+  'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff',
+  'https://fonts.gstatic.com/s/roboto/v15/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff',
+  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700',
+  'https://fonts.googleapis.com/css?family=PT+Sans:400,700'
 ];
 var urlUse = '';
 var stnUrlUse = '';
@@ -59,10 +71,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       console.log('Opened cache');
-      return cache.addAll(urlsToPrefetch.map(function(urlToPrefetch) {
-        console.log('urlToPrefetch', urlToPrefetch);
-        return new Request(urlToPrefetch, {mode: 'no-cors'});
-      })).then(function() {
+      return cache.addAll(urlsToPrefetch).then(function() {
         console.log('All resources have been fetched and cached.');
       });
     })
@@ -105,6 +114,8 @@ self.addEventListener('fetch', function(event) {
 
   event.respondWith(
     caches.match(event.request).then(function(response) {
+      console.log('fetch event.respondWith from cache', event.request.url);
+      console.log('response', response);
       return response || fetch(event.request);
     })
   );

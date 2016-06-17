@@ -1,11 +1,11 @@
 <header class="navBar"></header>
-<paper-header-panel mode="seamed" class="shell">
+<paper-header-panel mode="seamed" class="shell container">
 </paper-header-panel>
 <!-- <footer></footer> -->
 
     <!-- Templates -->
     <script type="text/template" id="tpl_shell" >
-        <div class="container-flex">
+        <div class="col-xs-12">
 	        <div class="section">
 	            <main class="content">
 	                <h2>Welcome to Sortyfied.com</h2>
@@ -16,48 +16,13 @@
     </script>
     <script type="text/template" id="tpl_nav">
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header ">
-                    <button type="button" class="navbar-toggle collapsed"
-                      data-toggle="collapse" aria-expanded="false" data-Target="#myNavbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                   <!--  <a href="#" class="navbar-brand nav-text" id="brand">
-                      MEET-UP-PLANNER
-                    </a> -->
-                    <a class="menu-icon-link" class="navbar-brand nav-text" >
-                      <i class="icon-list">
-                          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                      </i>
-                    </a>                                  
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a id="homeLink" href="#" 
-                                role="button" data-toggle="collapse" data-Target="#myNavbar">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a id="newEventLink" href="/#events/new" 
-                                role="button" data-toggle="collapse" data-Target="#myNavbar">
-                                New Event
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </nav>
     </script>
     <script type="text/html" id="tpl_trip_list">
         <form class="container" role="search">
             <div class="row">
                 <div class="col-xs-6">
-                    <h3><span  class="label label-info">Departure Station</span></h3>                  
+                    <h3><span  class="label label-info">Departure</span></h3>                  
                     <select id="departureStn" class="form-control">   
                         {{#stations}}                 
                         <option value="{{abbr}}">                      
@@ -67,7 +32,7 @@
                     </select>                
                 </div>
                 <div class="col-xs-6">
-                    <h3><span  class="label label-info">Arrival Station</span></h3>                  
+                    <h3><span  class="label label-info">Arrival</span></h3>                  
                     <select id="arrivalStn" class="form-control">   
                         {{#stations}}                 
                         <option value="{{abbr}}">                      

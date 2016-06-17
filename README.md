@@ -5,8 +5,8 @@
 
 # Installation
 
-1. Fork the repository, download it and open the index.html in the dist folder in a browser.
-2. Or run the "gulp" command from the root directory in the command line as described below on running the build process step 1.
+1. Fork the repository, download it and open the run index.html in the dist folder on localhost.
+2. Or run the "gulp" command from the root directory (the src folder) in the command line as described below on running the build process step 1.
 
 ## Usage
 1. After the application has been loaded successfully, you may sign up and start using it to identify departure and arrival times of trains by selecting the desired departure and arrival stations.
