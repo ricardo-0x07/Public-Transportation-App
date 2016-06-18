@@ -37,6 +37,7 @@ gulp.task('copy', function() {
     })).pipe(gulp.dest('dist/img')),
     // gulp.src('src/jasmine/**/*.js').pipe(gulp.dest('./dist/jasmine/')),
     gulp.src('src/*.json').pipe(gulp.dest('dist/')),
+    gulp.src('src/favicon.ico').pipe(gulp.dest('dist/')),
     gulp.src('src/idb/**/*').pipe(gulp.dest('dist/idb'))
   );
 });
